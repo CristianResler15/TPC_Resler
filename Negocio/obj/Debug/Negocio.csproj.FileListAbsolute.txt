@@ -1,0 +1,9 @@
+C:\Users\facu_\source\repos\TPC_RESLER\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\facu_\source\repos\TPC_RESLER\Negocio\bin\Debug\Negocio.dll
+C:\Users\facu_\source\repos\TPC_RESLER\Negocio\bin\Debug\Negocio.pdb
+C:\Users\facu_\source\repos\TPC_RESLER\Negocio\bin\Debug\Dominio.dll
+C:\Users\facu_\source\repos\TPC_RESLER\Negocio\bin\Debug\Dominio.pdb
+C:\Users\facu_\source\repos\TPC_RESLER\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\facu_\source\repos\TPC_RESLER\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\facu_\source\repos\TPC_RESLER\Negocio\obj\Debug\Negocio.dll
+C:\Users\facu_\source\repos\TPC_RESLER\Negocio\obj\Debug\Negocio.pdb
