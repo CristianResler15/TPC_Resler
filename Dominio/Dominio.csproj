@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Carrito.cs" />
     <Compile Include="Categoria.cs" />
-    <Compile Include="Contacto.cs" />
     <Compile Include="Domicilio.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="Persona.cs" />
@@ -52,6 +51,7 @@
     <Compile Include="Provedor.cs" />
     <Compile Include="TipoUsuario.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="venta.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

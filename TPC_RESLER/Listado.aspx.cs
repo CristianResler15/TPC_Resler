@@ -45,7 +45,10 @@ namespace TPC_RESLER
                 listaProductos = negocio.listar2();
                 var articuloSelec = Convert.ToInt32(((Button)sender).CommandArgument);
                 producto = listaProductos.Find(J => J.id == articuloSelec);
-
+                if (Session[Session.SessionID + "articulo"]!=null)
+                {
+                    carro = (Carrito)Session[Session.SessionID + "articulo"];
+                }
                 if (!carro.producto.Exists(A => A.id == producto.id))
                 {
                     carro.producto.Add(producto);

@@ -105,6 +105,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administrador.aspx" />
+    <Content Include="AltaCategoria.aspx" />
+    <Content Include="AltaMarca.aspx" />
+    <Content Include="AltaProvedor.aspx" />
+    <Content Include="AltaUsuario.aspx" />
     <Content Include="Envios.aspx" />
     <Content Include="Carrodecompras.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -112,6 +117,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="ListaCategoria.aspx" />
     <Content Include="Listado.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -125,6 +131,16 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Cuenta.aspx" />
+    <Content Include="ListaProvedor.aspx" />
+    <Content Include="ModificarCategoria.aspx" />
+    <Content Include="ModificarMarca.aspx" />
+    <Content Include="ModificarProducto.aspx" />
+    <Content Include="ModificarProvedor.aspx" />
+    <Content Include="ListaUsuario.aspx" />
+    <Content Include="AltaProducto.aspx" />
+    <Content Include="ListaMarca.aspx" />
+    <Content Include="ListaProducto.aspx" />
+    <Content Include="Adminustrador.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -161,6 +177,48 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.aspx.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador.aspx.designer.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adminustrador.Master.cs">
+      <DependentUpon>Adminustrador.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminustrador.Master.designer.cs">
+      <DependentUpon>Adminustrador.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AltaCategoria.aspx.cs">
+      <DependentUpon>AltaCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaCategoria.aspx.designer.cs">
+      <DependentUpon>AltaCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaMarca.aspx.cs">
+      <DependentUpon>AltaMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaMarca.aspx.designer.cs">
+      <DependentUpon>AltaMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaProvedor.aspx.cs">
+      <DependentUpon>AltaProvedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaProvedor.aspx.designer.cs">
+      <DependentUpon>AltaProvedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaUsuario.aspx.cs">
+      <DependentUpon>AltaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaUsuario.aspx.designer.cs">
+      <DependentUpon>AltaUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Envios.aspx.cs">
       <DependentUpon>Envios.aspx</DependentUpon>
@@ -177,6 +235,13 @@
     <Compile Include="Carrodecompras.aspx.designer.cs">
       <DependentUpon>Carrodecompras.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListaCategoria.aspx.cs">
+      <DependentUpon>ListaCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaCategoria.aspx.designer.cs">
+      <DependentUpon>ListaCategoria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Listado.aspx.cs">
       <DependentUpon>Listado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -187,7 +252,49 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ListaProvedor.aspx.cs">
+      <DependentUpon>ListaProvedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaProvedor.aspx.designer.cs">
+      <DependentUpon>ListaProvedor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarCategoria.aspx.cs">
+      <DependentUpon>ModificarCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarCategoria.aspx.designer.cs">
+      <DependentUpon>ModificarCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarMarca.aspx.cs">
+      <DependentUpon>ModificarMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarMarca.aspx.designer.cs">
+      <DependentUpon>ModificarMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarProducto.aspx.cs">
+      <DependentUpon>ModificarProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarProducto.aspx.designer.cs">
+      <DependentUpon>ModificarProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarProvedor.aspx.cs">
+      <DependentUpon>ModificarProvedor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModificarProvedor.aspx.designer.cs">
+      <DependentUpon>ModificarProvedor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ListaUsuario.aspx.cs">
+      <DependentUpon>ListaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaUsuario.aspx.designer.cs">
+      <DependentUpon>ListaUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -215,6 +322,27 @@
     </Compile>
     <Compile Include="Cuenta.aspx.designer.cs">
       <DependentUpon>Cuenta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AltaProducto.aspx.cs">
+      <DependentUpon>AltaProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AltaProducto.aspx.designer.cs">
+      <DependentUpon>AltaProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaMarca.aspx.cs">
+      <DependentUpon>ListaMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaMarca.aspx.designer.cs">
+      <DependentUpon>ListaMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaProducto.aspx.cs">
+      <DependentUpon>ListaProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaProducto.aspx.designer.cs">
+      <DependentUpon>ListaProducto.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

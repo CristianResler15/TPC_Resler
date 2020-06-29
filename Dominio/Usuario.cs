@@ -4,15 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Dominio
 {
-    public class Usuario
+    public class Usuario : Persona
     {
+        public Usuario()
+        {
+         
+            idtipo = new TipoUsuario();
+            activo = 1;
+        }
         public int Id { get; set; }
-        public Persona persona { get; set; }
-        public Contacto contacto { get; set; }
         public TipoUsuario idtipo { get; set; }
-        public bool activo { get; set; }
+        public int activo { get; set; }
         
     }
 }

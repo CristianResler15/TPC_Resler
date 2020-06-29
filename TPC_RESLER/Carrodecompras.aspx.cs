@@ -14,6 +14,10 @@ namespace TPC_RESLER
         public Productos Articulo { get; set; }
         List<Productos> ListaArticulos = new List<Productos>();
         Carrito carro = new Carrito();
+        VentaNegocio negocio1 = new VentaNegocio();
+        UsuarioNegocio negocio2 = new UsuarioNegocio();
+        Usuario usu = new Usuario();
+        List<venta> lista = new List<venta>();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session[Session.SessionID + "Cantidad"] != null && Session[Session.SessionID + "Total"] != null)
@@ -24,7 +28,6 @@ namespace TPC_RESLER
             carro = (Carrito)Session[Session.SessionID + "articulo"];
             if (carro != null)
             {
-
                 dgvCarrito.DataSource = carro.producto;
                 dgvCarrito.DataBind();
             }
@@ -43,16 +46,72 @@ namespace TPC_RESLER
             int idSeleccionado = Convert.ToInt32(IDSeleccionado);
             if (carro.producto.Exists(A => A.id == idSeleccionado))
             {
-                Articulo = carro.producto.Find(J => J.id == idSeleccionado);
-                carro.cantidad--;
-                carro.Total -= Articulo.Precio;
-                carro.producto.Remove(Articulo);
-                Session.Add(Session.SessionID + "articulo", carro);
-                Session.Add(Session.SessionID + "Cantidad", carro.cantidad);
-                Session.Add(Session.SessionID + "Total", carro.Total);
-                Response.Redirect("Carrodecompras.aspx");
-
+                if (e.CommandName == "Select")
+                {
+                    carro.cantidad--;
+                    carro.Total -= Articulo.Precio;
+                    carro.producto.Remove(Articulo);
+                    Session.Add(Session.SessionID + "articulo", carro);
+                    Session.Add(Session.SessionID + "Cantidad", carro.cantidad);
+                    Session.Add(Session.SessionID + "Total", carro.Total);
+                    Response.Redirect("Carrodecompras.aspx");
+                }
+                if (e.CommandName == "Select2")
+                {
+                    Articulo = carro.producto.Find(J => J.id == idSeleccionado);
+                    Articulo.Cantidad++;
+                    carro.cantidad++;
+                    carro.Total += Articulo.Precio;
+                    Session.Add(Session.SessionID + "articulo", carro);
+                    Session.Add(Session.SessionID + "Cantidad", carro.cantidad);
+                    Session.Add(Session.SessionID + "Total", carro.Total);
+                    Response.Redirect("Carrodecompras.aspx");
+                }
+                if (e.CommandName == "Select3")
+                {
+                    Articulo = carro.producto.Find(J => J.id == idSeleccionado);
+                    if(Articulo.Cantidad>1)
+                    {
+                
+                    Articulo.Cantidad--;
+                    carro.cantidad--;
+                    carro.Total -= Articulo.Precio;
+                    Session.Add(Session.SessionID + "articulo", carro);
+                    Session.Add(Session.SessionID + "Cantidad", carro.cantidad);
+                    Session.Add(Session.SessionID + "Total", carro.Total);
+                    Response.Redirect("Carrodecompras.aspx");
+                     
+                    }
+                    
+                }
             }
+        }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            venta aux = new venta();
+            venta nueva = new venta();
+            int bandera = 0;
+            carro = (Carrito)Session[Session.SessionID + "articulo"];
+            foreach (var item in carro.producto)
+            {
+                nueva.fechaventa = DateTime.Now.Date;
+                nueva.producto = item;
+                nueva.Total = Convert.ToDecimal( Session[Session.SessionID + "Total"]);
+                if (bandera==0)
+                {
+                negocio1.AgregarVenta(nueva);
+                    bandera++;
+                }
+                lista = negocio1.listarTipo();
+                aux = lista[lista.Count - 1];
+                nueva.Id = aux.Id;
+                negocio1.AgregarVentaxProducto(nueva);
+            }
+            Usuario usua = new Usuario();
+            usua = (Usuario)Session[Session.SessionID + "Usuario"];
+             negocio1.AgregarVentaxUsuario(nueva,usua.Id);
+            Response.Redirect("Listado.aspx");
         }
     }
 }

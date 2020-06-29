@@ -15,7 +15,7 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("data source=DESKTOP-8NPLU65\\SQLEXPRESS; initial catalog=e_commerce  ; integrated security=sspi");
+            conexion = new SqlConnection("data source=DESKTOP-8NPLU65\\SQLEXPRESS; initial catalog=Resler_DB  ; integrated security=sspi");
             comando = new SqlCommand();
             comando.Connection = conexion;
         }
@@ -28,8 +28,10 @@ namespace Negocio
 
         public void setearSP(string sp)
         {
-
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = sp;
         }
+
 
         public void agregarParametro(string nombre, object valor)
         {

@@ -20,7 +20,7 @@
         }
 
         .Header {
-            background-color:darkslategrey ;
+            background-color: darkslategrey;
             text-align-last: center;
         }
 
@@ -35,60 +35,78 @@
         }
 
         .Detalles {
-            background-color:white ;
-            margin-left: 900px;
-            height: 300px;
-            width: 300px;
+            background-color: white;
             border: double;
             border-radius: 50px;
-
         }
 
         .left {
             float: right;
             margin: 10px;
-            
         }
 
         .right {
             float: right;
-            width: 800px;
-            margin: 10px;
-           
+            width: 300px;
+            margin-right: 500px;
         }
     </style>
+    <div class="container">
+        <div class="row">
+            <div class=" w-75">
 
+                <div class="GirdAlineado  ">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <asp:GridView CssClass=" table GirdAlineado " ID="dgvCarrito" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvCarrito_SelectedIndexChanged" OnRowCommand="dgvCarrito_RowCommand">
+                        <Columns>
+                            <asp:BoundField HeaderText="Id" DataField="id" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
+                            <asp:ButtonField ControlStyle-CssClass="list-group-item btn btn-outline-danger Contenido pl-5 pr-5" HeaderText="Opcion" HeaderStyle-CssClass=" font-weight-bolder Header LetrasHeader " ButtonType="Link" Text="Eliminar" CommandName="Select" />
+                            <asp:BoundField ItemStyle-CssClass=" align-items-xl-center Contenido  " HeaderStyle-CssClass="  Header LetrasHeader" HeaderText="Nombre" DataField="Nombre" />
+                            <asp:BoundField ItemStyle-CssClass=" align-items-xl-center Contenido  " HeaderStyle-CssClass=" Header  LetrasHeader" HeaderText="Marca" DataField="idmarca.Descripcion" />
+                            <asp:BoundField ItemStyle-CssClass="align-items-xl-center Contenido  " HeaderStyle-CssClass="  Header LetrasHeader" HeaderText="Caracteristicas" DataField="Descripcion" />
+                            <asp:BoundField ItemStyle-CssClass="align-items-xl-center Contenido " HeaderStyle-CssClass="  Header   LetrasHeader" HeaderText="Precio" DataField="Precio" />
+                            <asp:ButtonField ControlStyle-CssClass="list-group-item btn btn-outline-danger Contenido pl-5 pr-5" HeaderText="Opcion" HeaderStyle-CssClass=" font-weight-bolder Header LetrasHeader " ButtonType="Link" Text="<" CommandName="Select3" />
+                            <asp:BoundField ItemStyle-CssClass="align-items-xl-center Contenido " HeaderStyle-CssClass="  Header   LetrasHeader" HeaderText="Cantidad" DataField="Cantidad" />
+                            <asp:ButtonField ControlStyle-CssClass="list-group-item btn btn-outline-danger Contenido pl-5 pr-5" HeaderText="Opcion" HeaderStyle-CssClass=" font-weight-bolder Header LetrasHeader " ButtonType="Link" Text=">" CommandName="Select2" />
+                        </Columns>
+                    </asp:GridView>
 
-        <div class="Detalles left">
-
-            <div class="bolsita ml-5 mt-5">
-                <br />
-                <asp:Label Text="" ID="LblCarrito" Style="font-size: 20px;" CssClass=" ml-4 mt-2 font-weight-light" runat="server" />
+                </div>
             </div>
-            <div class=" mt-5">
-                <br />
 
-                <asp:Label Text="TOTAL:" ID="LblTotal" CssClass=" float-md-left mt-5 ml-5 badge bg-success " Style="font-size: 25px;" runat="server" />
+            <div style="width:23%" class="">
+
+                <div class="Detalles ">
+
+                    <div class="row mt-5">
+
+                        <div class="col-4 mt.">
+
+                            <div class="bolsita row ">
+                                <div class="col-4">
+                                    <asp:Label Text="" ID="LblCarrito" Style="font-size: 20px;" CssClass=" left font-weight-light" runat="server" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class=" col-4 mb-5">
+                                    <asp:Label Text="TOTAL:" ID="LblTotal" CssClass=" float-md-left mt-5 ml-5 badge bg-success " Style="font-size: 25px;" runat="server" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class=" col-4 nmt5">
+                                    <asp:Button Text="Comprar" CssClass="btn btn-primary" runat="server" OnClick="Unnamed_Click" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
-    <div class="GirdAlineado right">
-        <br />  
-        <br />  
-        <br />  
-        <br />  
-        <asp:GridView CssClass=" table GirdAlineado " ID="dgvCarrito" runat="server" AutoGenerateColumns="false" OnSelectedIndexChanged="dgvCarrito_SelectedIndexChanged" OnRowCommand="dgvCarrito_RowCommand">
-            <Columns>
-                <asp:BoundField HeaderText="Id" DataField="id" ItemStyle-CssClass="oculto" HeaderStyle-CssClass="oculto" />
-                <asp:ButtonField ControlStyle-CssClass="list-group-item btn btn-outline-danger Contenido pl-5 pr-5" HeaderText="Opcion" HeaderStyle-CssClass=" font-weight-bolder Header LetrasHeader " ButtonType="Link" Text="Eliminar" CommandName="Select" />
-                <asp:BoundField ItemStyle-CssClass=" align-items-xl-center Contenido  " HeaderStyle-CssClass="  Header LetrasHeader" HeaderText="Nombre" DataField="Nombre" />
-                <asp:BoundField ItemStyle-CssClass=" align-items-xl-center Contenido  " HeaderStyle-CssClass=" Header  LetrasHeader" HeaderText="Marca" DataField="idmarca.Descripcion" />
-                <asp:BoundField ItemStyle-CssClass="align-items-xl-center Contenido  " HeaderStyle-CssClass="  Header LetrasHeader" HeaderText="Caracteristicas" DataField="Descripcion" />
-                <asp:BoundField ItemStyle-CssClass="align-items-xl-center Contenido " HeaderStyle-CssClass="  Header   LetrasHeader" HeaderText="Precio" DataField="Precio" />
-            </Columns>
-        </asp:GridView>
-
-    </div>
+   
 
 
 </asp:Content>
